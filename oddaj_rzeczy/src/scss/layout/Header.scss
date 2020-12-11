@@ -21,6 +21,7 @@ header {
         color: $color-nav-text;
         border: none;
         padding: 9px 10px;
+        border: 00.75px solid white;
         &:hover {
           border: 0.75px solid $color-nav-border;
         }
@@ -35,6 +36,8 @@ header {
         font-size: 18px;
         line-height: 24px;
         color: $color-text;
+        border: 00.75px solid white;
+        cursor: pointer;
         &:hover {
           border: 0.75px solid $color-text;
         }
@@ -62,18 +65,18 @@ header {
     .header-buttons {
       display: flex;
       justify-content: center;
-      .main-btn {
-        color: $color-text;
-        font-size: 36px;
-        font-weight: lighter;
-        line-height: 45px;
-        background-color: white;
-        border: 0.75px solid $color-text;
-        height: 120px;
-        width: 310px;
-        padding: 13px 50px;
-        margin: 65px 22px;
-      }
+      // .main-btn {
+      //   color: $color-text;
+      //   font-size: 36px;
+      //   font-weight: lighter;
+      //   line-height: 45px;
+      //   background-color: white;
+      //   border: 0.75px solid $color-text;
+      //   height: 120px;
+      //   width: 310px;
+      //   padding: 13px 50px;
+      //   margin: 65px 22px;
+      // }
     }
   }
 }

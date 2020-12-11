@@ -1,0 +1,75 @@
+.steps-title {
+  height: 200px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  h3 {
+    font-size: 38px;
+    color: $color-text;
+    line-height: 55px;
+    letter-spacing: -0.76px;
+    margin-bottom: 25px;
+  }
+}
+
+.steps-description {
+  height: 325px;
+  background-color: $color-bg;
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.step-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 85px;
+  img {
+    width: 83px;
+    height: 83px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-text;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 20px;
+    &:after {
+      content: "";
+      //   display: inline;
+      width: 70px;
+      height: 0;
+      border: 1px solid $color-text;
+      color: $color-text;
+      position: absolute;
+      top: 120%;
+      left: calc(50% - 35px);
+
+      //   z-index: 2;
+    }
+    span {
+      font-size: 16px;
+      color: $color-text;
+      line-height: 10px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.steps-done {
+  height: 235px;
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

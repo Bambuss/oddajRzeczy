@@ -14,10 +14,12 @@
 //elements
 @import "elements/hamburgers";
 @import "elements/productBoxSmall"; // @import "path/to/hamburgers";
+@import "elements/buttons";
 //layout
-
 @import "layout/Header.scss";
 @import "layout/ThreeColumns.scss";
+@import "layout/4steps.scss";
+@import "layout/about.scss";
 // @import "layout/navigation.scss";
 // @import "layout/MainPage.scss";
 // @import "layout/Footer.scss";

@@ -25,9 +25,15 @@ function HomeHeader() {
             </NavLink>
           </div>
           <ul className="lower-nav">
-            <li>Start</li>
-            <li>O co chodzi?</li>
-            <li>O nas</li>
+            <Link to="start" smooth={true} duration={500}>
+              <li>Start</li>
+            </Link>
+            <Link to="4steps" smooth={true} duration={500}>
+              <li>O co chodzi?</li>
+            </Link>
+            <Link to="about" smooth={true} duration={500}>
+              <li>O nas</li>
+            </Link>
             <li>Fundacja i organizacje</li>
             <li>Kontakt</li>
           </ul>

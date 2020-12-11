@@ -2,7 +2,7 @@ import React from "react";
 
 function HomeThreeColumns() {
   return (
-    <section className="three-columns">
+    <section className="three-columns" id="start">
       <div className="container">
         <div className="stat-box">
           <h3>10</h3>
