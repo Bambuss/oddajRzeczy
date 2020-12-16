@@ -15,6 +15,7 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import HomeContact from "./HomeContact";
 
 function Home() {
   return (
@@ -24,7 +25,7 @@ function Home() {
       <Home4Steps />
       <HomeAbout />
       <HomeHelp />
-      <HomeForm />
+      <HomeContact />
     </section>
   );
 }

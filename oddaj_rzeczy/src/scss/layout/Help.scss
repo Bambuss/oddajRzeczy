@@ -1,0 +1,100 @@
+.help {
+  height: 1012px;
+  .help-title {
+    font-size: 38px;
+    text-align: center;
+    line-height: 55px;
+    letter-spacing: -0.76px;
+    color: $color-text;
+    margin-top: 70px;
+  }
+  .help-recipient {
+    margin-top: 50px;
+    text-align: center;
+    button {
+      padding: 23px 42px;
+      margin: 0 30px;
+      background-color: white;
+      border: 0.75px solid white;
+      color: $color-text;
+      font-size: 24px;
+      // line-height: 85px;
+      &:hover {
+        border: 0.75px solid $color-text;
+      }
+      &:focus {
+        border: 0.75px solid $color-text;
+      }
+    }
+  }
+  .help-description {
+    margin-top: 70px;
+    font-size: 22px;
+    line-height: 30px;
+    color: $color-text;
+    text-align: center;
+    padding: 0 30%;
+  }
+  .help-list {
+    margin-top: 35px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    #page-content {
+      width: 100%;
+    }
+    .found {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 31px 0;
+      border-bottom: 0.75px solid $color-text;
+      font-family: $font-meri;
+      color: $color-text;
+      &:last-child {
+        border-bottom: none;
+      }
+      .found-title {
+        text-align: left;
+        h4 {
+          font-size: 26px;
+          line-height: 31px;
+          font-weight: 300;
+        }
+        span {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+      .found-desc {
+        text-align: right;
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+
+    #page-numbers {
+      display: flex;
+      color: $color-text;
+      margin-top: 20px;
+      li {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 13px 15px;
+        margin: 0 12px;
+        cursor: pointer;
+        border: 0.75px solid white;
+        &:hover {
+          border: 0.75px solid $color-text;
+        }
+        &:focus {
+          border: 0.75px solid $color-text;
+        }
+      }
+    }
+  }
+}

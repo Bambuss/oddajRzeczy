@@ -34,8 +34,12 @@ function HomeHeader() {
             <Link to="about" smooth={true} duration={500}>
               <li>O nas</li>
             </Link>
-            <li>Fundacja i organizacje</li>
-            <li>Kontakt</li>
+            <Link to="help" smooth={true} duration={500}>
+              <li>Fundacja i organizacje</li>
+            </Link>
+            <Link to="contact" smooth={true} duration={500}>
+              <li>Kontakt</li>
+            </Link>
           </ul>
         </nav>
         <div className="header-main">
