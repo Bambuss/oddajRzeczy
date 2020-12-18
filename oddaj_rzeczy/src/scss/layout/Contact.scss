@@ -30,6 +30,15 @@
       letter-spacing: -0.76px;
     }
   }
+  .success {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff00;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 30px;
+    line-height: 25px;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -60,6 +69,12 @@
       border-bottom: 0.75px solid $color-text;
       font-size: 18px;
     }
+    .error {
+      color: #ffffff00;
+      border-top: 2px solid #ffffff00;
+      font-weight: 600;
+      padding-top: 2px;
+    }
   }
   button {
     font-size: 18px;
@@ -70,6 +85,8 @@
     font-weight: 300;
     padding: 13px 52px;
     margin-top: 40px;
+    width: 50%;
+    align-self: flex-end;
   }
   .social {
     margin-top: 270px;
