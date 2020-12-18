@@ -7,22 +7,24 @@ function HomeContact() {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [textarea, setTextarea] = useState("");
-  const [errorStyles, setErrorStyles] = useState({});
-  const [mailStyles, setMailStyles] = useState({});
-  const [textareaStyles, setTextareaStyles] = useState({});
+  const [errorStyles, setErrorStyles] = useState({ display: "none" });
+  const [mailStyles, setMailStyles] = useState({ display: "none" });
+  const [textareaStyles, setTextareaStyles] = useState({ display: "none" });
   const [successStyle, setSuccessStyle] = useState({});
 
+  // Load the full build.
+  var _ = require("lodash");
   //walidacja
 
   const handleSubmit = (email) => {
     email.preventDefault();
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (name === "" || mail === "" || textarea === "") {
-      alert("Nie wypełniono wszystkich pól");
-    }
+    // if (name === "" || mail === "" || textarea === "") {
+    //   alert("Nie wypełniono wszystkich pól");
+    // }
 
-    if (name.includes(` `)) {
+    if (name.includes(` `) || name === "") {
       setErrorStyles({
         borderTop: "2px solid red",
         color: "red",
@@ -31,7 +33,7 @@ function HomeContact() {
       setErrorStyles({});
     }
 
-    if (textarea.length < 120) {
+    if (textarea.length < 120 || textarea === "") {
       setTextareaStyles({
         borderTop: "2px solid red",
         color: "red",
@@ -40,7 +42,7 @@ function HomeContact() {
       setTextareaStyles({});
     }
 
-    if (!re.test(mail)) {
+    if (!re.test(mail) || mail === "") {
       setMailStyles({
         borderTop: "2px solid red",
         color: "red",
@@ -48,11 +50,48 @@ function HomeContact() {
     } else {
       setMailStyles({});
     }
+
+    if (
+      _.isEmpty(errorStyles) === true &&
+      _.isEmpty(textareaStyles) === true &&
+      _.isEmpty(mailStyles) === true
+    ) {
+      // setSuccessStyle({ display: "flex" });
+
+      fetch(`https://fer-api.coderslab.pl/v1/portfolio/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          mail: mail,
+          msg: textarea,
+        }),
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json;
+          }
+        })
+        .then(setSuccessStyle({ display: "flex" }))
+        .catch((error) => {
+          console.error("error:", error);
+        });
+    } else {
+      setSuccessStyle({ display: "none" });
+    }
   };
   const handleCLick = () => {
-    if (errorStyles === {} && textareaStyles === {} && mailStyles === {}) {
-      setSuccessStyle({ color: "green" });
-    }
+    // if (
+    //   _.isEmpty(errorStyles) === true &&
+    //   _.isEmpty(textareaStyles) === true &&
+    //   _.isEmpty(mailStyles) === true
+    // ) {
+    //   setSuccessStyle({ display: "flex" });
+    // } else {
+    //   setSuccessStyle({ display: "none" });
+    // }
   };
 
   return (
@@ -74,7 +113,6 @@ function HomeContact() {
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                required
               />
               <p className="error" style={errorStyles}>
                 Podane imię jest nieprawidłowe!
@@ -87,7 +125,6 @@ function HomeContact() {
                 name="email"
                 value={mail}
                 onChange={(e) => setMail(e.target.value)}
-                required
               />
               <p className="error" style={mailStyles}>
                 Podany email jest nieprawidłowy!
@@ -102,7 +139,6 @@ function HomeContact() {
             rows="5"
             value={textarea}
             onChange={(e) => setTextarea(e.target.value)}
-            required
           ></textarea>
           <p className="error" style={textareaStyles}>
             Wiadomość musi mieć conajmniej 120 znaków!

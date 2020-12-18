@@ -5,6 +5,9 @@ import "./scss/App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Home from "./components/Home";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -12,6 +15,17 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+
+        <Route path="/logowanie">
+          <Login />
+        </Route>
+
+        <Route path="/rejestracja">
+          <Register />
+        </Route>
+        <Route path="/wylogowano">
+          <Logout />
         </Route>
       </Switch>
     </Router>
