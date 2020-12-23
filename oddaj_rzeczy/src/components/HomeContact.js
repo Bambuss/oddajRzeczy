@@ -23,7 +23,7 @@ function HomeContact() {
     // if (name === "" || mail === "" || textarea === "") {
     //   alert("Nie wypełniono wszystkich pól");
     // }
-
+    //formik - npm
     if (name.includes(` `) || name === "") {
       setErrorStyles({
         borderTop: "2px solid red",
@@ -57,24 +57,25 @@ function HomeContact() {
       _.isEmpty(mailStyles) === true
     ) {
       // setSuccessStyle({ display: "flex" });
-
+      console.log("hej");
+      //polecam async/await
       fetch(`https://fer-api.coderslab.pl/v1/portfolio/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: name,
-          mail: mail,
+          name,
+          mail,
           msg: textarea,
         }),
       })
         .then((res) => {
           if (res.ok) {
-            return res.json;
+            //sukces
+            setSuccessStyle({ display: "flex" });
           }
         })
-        .then(setSuccessStyle({ display: "flex" }))
         .catch((error) => {
           console.error("error:", error);
         });

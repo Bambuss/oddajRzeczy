@@ -98,6 +98,11 @@ function Register() {
             <p className="password-error" style={passwordRepeatError}>
               Podane hasła nie są takie same!
             </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi
+              dolores dolorem perspiciatis. Eaque nulla totam saepe iusto facere
+              error unde!
+            </p>
           </div>
           <div className="log-btns">
             <NavLink to="/logowanie">
